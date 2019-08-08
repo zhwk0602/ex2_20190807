@@ -1,0 +1,31 @@
+﻿@model ex2_20190807.Models.DetailViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<body>
+
+    @using (Html.BeginForm("Detail", "DetailView", FormMethod.Post))
+    {
+        <table style="border:8px #FFD382 groove;" cellpadding="10" border="1">
+            <tr>
+                <th>CustomerID</th>
+                <th>CompanyName</th>
+                <th>ContactName</th>
+                <th>ContactTitle</th>
+                <th></th>
+            </tr>
+
+            <tr>
+                
+                <td>@Html.TextBoxFor(x => x.CustomerID)</td>
+                <td>@Model.CompanyName</td>
+
+                <td>@Html.TextBoxFor(x => x.ContactName)</td>
+
+                <td>@Html.TextBoxFor(x => x.ContactTitle)</td>
+                <td><input type="submit" value="編輯"></td>
+            </tr>
+        </table>
+    }
+</body>

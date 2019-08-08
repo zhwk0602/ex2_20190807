@@ -1,0 +1,40 @@
+﻿@model List<ex2_20190807.Models.SqlViewModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+    <body>
+       
+        
+            <table style="border:8px #FFD382 groove;" cellpadding="10" border="1">
+                <tr>
+                    <th>CustomerID</th>
+                    <th>CompanyName</th>
+                    <th></th>
+                </tr>
+                @foreach (var row in Model)
+                {
+                    <tr>
+                        <td>@row.CustomerID</td>
+                        <td>@row.CompanyName</td>
+                        <td>
+                            @Html.ActionLink(
+                                    "詳細",
+                                    "detail",
+                                    "DetailView",
+                                    routeValues: new
+                                    {
+                                        id = row.CustomerID
+                                    },
+                                    htmlAttributes: null
+                                )
+                        </td>
+                    </tr>
+                }
+            </table>
+
+
+        
+
+    </body>
